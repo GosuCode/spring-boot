@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Data</title>
+</head>
+
+<body>
+	<section>
+		<th:block th:if="${totalStudents > 0}">
+			<div class="col-md-3" th:each="st : ${student}">
+				<p class="fs-5 text-center">[[${st.name}]]</p>
+			</div>
+		</th:block>
+		Total Students: [[${totalStudents}]]
+		<th:block th:if="${totalStudents == 0}">
+			<p>No students found.</p>
+		</th:block>>
+	</section>
+</body>
+
+</html>
